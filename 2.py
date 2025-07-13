@@ -3,7 +3,7 @@ import requests
 import time
 
 # ESP32 IP address
-ESP32_IP = "http://192.168.4.1"  # Update this if needed
+ESP32_IP = ""  # Update this if needed
 
 # Initialize webcam
 cap = cv2.VideoCapture(0)
@@ -12,10 +12,10 @@ if not cap.isOpened():
     exit()
 
 # Warm-up delay for camera
-time.sleep(2)
+#time.sleep(2)
 
 # Load Haar cascade for face detection
-face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+#face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 
 # Get frame dimensions
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
