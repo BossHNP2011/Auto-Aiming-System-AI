@@ -24,7 +24,7 @@ void setup() {
 
 void loop() {
   WiFiClient client = server.available();
-  if (client) {
+  //if (client) {
     Serial.println("Client connected");
     String request = client.readStringUntil('\r');
     client.flush();
@@ -32,7 +32,7 @@ void loop() {
     // Parse angles from request like /move?pan=90&tilt=45
     int panIndex = request.indexOf("pan=");
     int tiltIndex = request.indexOf("tilt=");
-    if (panIndex != -1 && tiltIndex != -1) {
+    //if (panIndex != -1 && tiltIndex != -1) {
       int pan = request.substring(panIndex + 4, request.indexOf('&')).toInt();
       int tilt = request.substring(tiltIndex + 5).toInt();
 
@@ -46,10 +46,10 @@ void loop() {
     }
 
     // Simple response
-    client.println("HTTP/1.1 200 OK");
+    //client.println("HTTP/1.1 200 OK");
     client.println("Content-Type: text/plain");
     client.println();
-    client.println("OK");
+    //client.println("OK");
     client.stop();
     Serial.println("Client disconnected");
   }
